@@ -4,9 +4,9 @@ function ToDo (toDo , date){
     this.toDo = toDo;
     this.date = date;
 }
-console.log(toDo);
+// console.log(toDo);
 function obj() {
-    var toDo = document.getElementById('toDo').value;
+    var toDo = document.getElementById('toDo');
     console.log(toDo);
     var date =document.getElementById('date').value;
     console.log(date)
@@ -24,12 +24,24 @@ obj();
 var doSubmit = document.getElementById('form');
 doSubmit.addEventListener('submit', form);
 
+function renderResult()
+{
+    for(var i=0 ; i<toDoArray.length ; i++)
+    {   var ul = document.getElementById('ul');
+        var li = document.createElement('li');
+        ul.appendChild(li);
+        li.textContent=toDoArray[i];
+
+
+    }
+}
+renderResult()
 function setItem(){
     var toDoList = JSON.stringify(toDoArray);
     localStorage.setItem('toDo' ,toDoList );
 
 }
-
+setItem()
 function getItem(){
     var toDoListGet= localStorage.getItem('toDo');
     if(toDoListGet){
