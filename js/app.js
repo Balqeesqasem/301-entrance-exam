@@ -11,7 +11,7 @@ doSubmit.addEventListener('submit', form);
 
 function form(e)
 {
-    // console.log(event)
+    //console.log(e)
     // var toDoTag = document.getElementById('form');
     var toDo= document.getElementById('toDo').e.target.toDo;
     console.log(toDo);
@@ -62,7 +62,7 @@ setItem()
 function getItem(){
     var toDoListGet= localStorage.getItem('toDo');
     if(toDoListGet){
-        toDoList=JSON.parse(toDoListGet)
+        toDoArray=JSON.parse(toDoListGet)
     }
 }
 getItem();
