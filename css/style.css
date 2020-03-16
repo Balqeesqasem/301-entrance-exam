@@ -1,0 +1,57 @@
+main{
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    text-align: center;
+    background-color: #6d8adbc7;
+    padding: 2%;
+    font-family: 'Roboto', sans-serif;
+    color: #dae4ff;
+    font-size: 119%;
+}
+
+section#formSection {
+   
+    margin-top: 5%;
+    margin-left: 10%;
+    width: 40%;
+    
+    background-color: #eee;
+}
+
+h2 {
+    text-align: center;
+    padding: 2%;
+    font-size: 122%;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2%;
+}
+
+input {
+    margin-left: 26%;
+    margin-right: 36%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    padding: 1%;
+    width: 56%;
+}
+label {
+    text-align: center;
+    margin-left: 26%;
+    margin-right: 23%;
+}
+
+button {
+    padding: 2%;
+    width: 10%;
+    background-color: #8da4e3;
+}
+
+button {
+    padding: 2%;
+    width: 15%;
+    background-color: #8da4e3;
+    color: #dadef7;
+    margin-left: 70%;
+    margin-bottom: 11%;
+}
