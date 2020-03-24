@@ -3,6 +3,7 @@ var toDoArray = [];
 function ToDo (toDo , date){
     this.toDo = toDo;
     this.date = date;
+    toDoArray.push(this);
 }
 // console.log(toDo);
 
@@ -11,17 +12,21 @@ doSubmit.addEventListener('submit', form);
 
 function form(e)
 {
-    //console.log(e)
+
+    console.log(e);
+    console.log(e.target.toDo.value);
     // var toDoTag = document.getElementById('form');
-    var toDo= document.getElementById('toDo').e.target.toDo;
-    console.log(toDo);
-    var date = document.getElementById('date').e.target.date;
-    var plane = new ToDo (toDo , date);
-    toDoArray.push(plane);
-    console.log(toDo);
-    console.log(toDoArray);
+    event.preventDefault();
+    new ToDo (e.target.toDo.value , e.target.date.value);
+    // document.getElementById('toDo').value = '';
+    
+    // document.getElementById('date').value = '';
+    setItem();
+    renderResult();
+    
+    
 }
-form();
+// form();
 
 // function obj() {
 //     var toDo = document.getElementById('toDo');
@@ -43,26 +48,29 @@ form();
 
 function renderResult()
 {
+    var ul = document.getElementById('ul');
+    ul.textContent='';
     for(var i=0 ; i<toDoArray.length ; i++)
-    {   var ul = document.getElementById('ul');
+    {   
         var li = document.createElement('li');
+        var li1 = document.createElement('li');
         ul.appendChild(li);
-        li.textContent=toDoArray[i];
-
-
-    }
+        ul.appendChild(li1);
+        li1.textContent=toDoArray[i].date;
+        li.textContent=toDoArray[i].toDo;
+        }
 }
-renderResult()
+
+
 function setItem(){
     var toDoList = JSON.stringify(toDoArray);
     localStorage.setItem('toDo' ,toDoList );
 
 }
-setItem()
+
 function getItem(){
     var toDoListGet= localStorage.getItem('toDo');
     if(toDoListGet){
         toDoArray=JSON.parse(toDoListGet)
     }
 }
-getItem();
